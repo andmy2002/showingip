@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ips       Ip[]     @relation("CreatedIPs")
+  favorites Ip[]     @relation("UserFavorites")
+  themes    Theme[]
+  news      News[]
+}
+
+model Ip {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  price       Float
+  status      String   @default("AVAILABLE")
+  images      String[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  String
+  creator     User     @relation("CreatedIPs", fields: [creatorId], references: [id])
+  creatorId   String
+  favoritedBy User[]   @relation("UserFavorites")
+  tags        Tag[]
+  themes      Theme[]
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ips       Ip[]
+}
+
+model Tag {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ips       Ip[]
+}
+
+model Theme {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  content     String   @db.Text
+  coverImage  String?
+  images      String[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  creatorId   String
+  creator     User     @relation(fields: [creatorId], references: [id])
+  ips         Ip[]
+}
+
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  summary     String   @db.Text
+  content     String   @db.Text
+  coverImage  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id])
+}

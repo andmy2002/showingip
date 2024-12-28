@@ -1,0 +1,266 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Banner样式 */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: linear-gradient(45deg, #2D5BFF, #6C63FF);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.bannerContent {
+  text-align: center;
+  z-index: 1;
+}
+
+.bannerContent h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.bannerContent p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+/* 通用section样式 */
+.section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* IP卡片样式 */
+.ipGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ipCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ipCard:hover {
+  transform: translateY(-5px);
+}
+
+.ipImageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 比例 */
+}
+
+.ipImage {
+  object-fit: cover;
+}
+
+.ipInfo {
+  padding: 1.5rem;
+}
+
+.ipInfo h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.ipInfo p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #f0f2f5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* 主题卡片样式 */
+.themeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.themeCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.themeCard:hover {
+  transform: translateY(-5px);
+}
+
+.themeImageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.themeImage {
+  object-fit: cover;
+}
+
+.themeInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+}
+
+.themeInfo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.themeInfo p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.ipCount {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* 新闻列表样式 */
+.newsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.newsCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.newsCard:hover {
+  transform: translateY(-5px);
+}
+
+.newsImageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.newsImage {
+  object-fit: cover;
+}
+
+.newsInfo {
+  padding: 1.5rem;
+}
+
+.newsInfo h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.newsInfo p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.newsInfo time {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* 合作伙伴样式 */
+.partners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .banner {
+    height: 400px;
+  }
+
+  .bannerContent h1 {
+    font-size: 2rem;
+  }
+
+  .bannerContent p {
+    font-size: 1.1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .ipGrid,
+  .themeGrid,
+  .newsList {
+    grid-template-columns: 1fr;
+  }
+} 

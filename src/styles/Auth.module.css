@@ -1,0 +1,154 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f0f2f5;
+}
+
+.card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 420px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.field label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.field input {
+  padding: 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  color: #000000;
+  background-color: #fff;
+  transition: all 0.2s;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #0070f3;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.15);
+}
+
+.field input::placeholder {
+  color: #6b7280;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+  background-color: #fef2f2;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fee2e2;
+}
+
+.submitButton {
+  background-color: #0070f3;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #0051cc;
+  transform: translateY(-1px);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  background-color: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.registerLink {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #000000;
+  margin-top: 2rem;
+}
+
+.registerLink a {
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.registerLink a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .field label {
+    font-size: 1rem;
+  }
+
+  .field input {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+
+  .submitButton {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+
+  .registerLink {
+    font-size: 1rem;
+  }
+} 
